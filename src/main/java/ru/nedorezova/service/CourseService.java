@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.nedorezova.dto.CourseDto;
 import ru.nedorezova.entity.Course;
 import ru.nedorezova.exception.EnrollmentException;
-import ru.nedorezova.exception.NotFoundException;
+import ru.nedorezova.exception.CourseNotFoundException;
 import ru.nedorezova.repository.CourseRepository;
 
 import java.time.LocalDateTime;
@@ -28,13 +28,13 @@ public class CourseService {
 
     public CourseDto getCourse(Long courseId) {
         Course course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new NotFoundException("Курс не найден"));
+                .orElseThrow(() -> new CourseNotFoundException("Курс не найден"));
         return CourseDtoMapper.convertToDto(course);
     }
 
     public CourseDto enrollStudent(Long courseId, Long studentId) {
         Course course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new NotFoundException("Курс не найден"));
+                .orElseThrow(() -> new CourseNotFoundException("Курс не найден"));
 
         // Проверка доступности курса
         if (course.getCurrentEnrollment() >= course.getCapacity()) {

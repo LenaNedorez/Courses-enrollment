@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.nedorezova.dto.CourseDto;
 import ru.nedorezova.exception.EnrollmentException;
-import ru.nedorezova.exception.NotFoundException;
+import ru.nedorezova.exception.CourseNotFoundException;
 import ru.nedorezova.service.CourseService;
 
 import java.util.List;
@@ -26,7 +26,7 @@ public class CourseController {
     public ResponseEntity<CourseDto> getCourse(@PathVariable Long courseId) {
         try {
             return ResponseEntity.ok(courseService.getCourse(courseId));
-        } catch (NotFoundException e) {
+        } catch (CourseNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
     }
@@ -38,7 +38,7 @@ public class CourseController {
             return ResponseEntity.ok(courseService.enrollStudent(courseId, studentId));
         } catch (EnrollmentException e) {
             return ResponseEntity.badRequest().build();
-        } catch (NotFoundException e) {
+        } catch (CourseNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
     }
