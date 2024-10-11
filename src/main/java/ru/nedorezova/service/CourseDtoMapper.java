@@ -1,8 +1,9 @@
 package ru.nedorezova.service;
 
+import org.springframework.stereotype.Service;
 import ru.nedorezova.dto.CourseDto;
 import ru.nedorezova.entity.Course;
-
+@Service
 public class CourseDtoMapper {
 
     public static CourseDto convertToDto(Course course) {
