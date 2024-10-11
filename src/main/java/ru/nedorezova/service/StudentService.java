@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.nedorezova.dto.EnrollmentDto;
 import ru.nedorezova.dto.StudentDto;
 import ru.nedorezova.entity.Course;
+import ru.nedorezova.entity.Enrollment;
 import ru.nedorezova.entity.Student;
 import ru.nedorezova.exception.StudentNotFoundException;
 import ru.nedorezova.repository.CourseRepository;
@@ -33,12 +34,16 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
-    public Student getStudent(Long id) {
+    public Student getStudent(Long id) throws StudentNotFoundException {
         return studentRepository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student not found"));
     }
 
     public List<EnrollmentDto> getStudentEnrollment(Long studentId) {
-        return enrollmentRepository.findByStudentId(studentId);
+        return enrollmentRepository
+                .findByStudentId(studentId)
+                .stream()
+                .map(EnrollmentDtoMapper::convertToDto)
+                .collect(Collectors.toList());;
     }
 
     // Метод для записи на курс
