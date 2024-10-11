@@ -6,7 +6,6 @@ import ru.nedorezova.dto.CourseDto;
 import ru.nedorezova.dto.EnrollmentDto;
 import ru.nedorezova.dto.StudentDto;
 import ru.nedorezova.entity.Course;
-import ru.nedorezova.entity.Enrollment;
 import ru.nedorezova.entity.Student;
 import ru.nedorezova.exception.CourseNotFoundException;
 import ru.nedorezova.exception.EnrollmentException;
@@ -43,8 +42,9 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
-    public Student getStudent(Long id) throws StudentNotFoundException {
-        return studentRepository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student not found"));
+    public StudentDto getStudent(Long id) throws StudentNotFoundException {
+        Student student = studentRepository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student not found"));
+        return StudentDtoMapper.convertToDto(student);
     }
 
     public List<EnrollmentDto> getStudentEnrollment(Long studentId) {
@@ -52,7 +52,7 @@ public class StudentService {
                 .findByStudentId(studentId)
                 .stream()
                 .map(EnrollmentDtoMapper::convertToDto)
-                .collect(Collectors.toList());;
+                .collect(Collectors.toList());
     }
 
     public CourseDto enrollStudent(Long courseId, Long studentId) throws CourseNotFoundException, EnrollmentException {
