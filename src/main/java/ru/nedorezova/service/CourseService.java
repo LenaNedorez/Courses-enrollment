@@ -16,8 +16,13 @@ import java.util.stream.Collectors;
 @Service
 public class CourseService {
 
-    @Autowired
+
     private CourseRepository courseRepository;
+
+    @Autowired
+    public CourseService(CourseRepository courseRepository) {
+        this.courseRepository = courseRepository;
+    }
 
     public List<CourseDto> getCourses() {
         List<Course> courses = courseRepository.findAll();
@@ -26,35 +31,10 @@ public class CourseService {
                 .collect(Collectors.toList());
     }
 
-    public CourseDto getCourse(Long courseId) {
+    public CourseDto getCourse(Long courseId) throws CourseNotFoundException {
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new CourseNotFoundException("Курс не найден"));
         return CourseDtoMapper.convertToDto(course);
     }
 
-    public CourseDto enrollStudent(Long courseId, Long studentId) {
-        Course course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new CourseNotFoundException("Курс не найден"));
-
-        // Проверка доступности курса
-        if (course.getCurrentEnrollment() >= course.getCapacity()) {
-            throw new EnrollmentException("Курс заполнен, пожалуйста, выберите другой");
-        }
-
-        if (!isEnrollmentWindowOpen(course)) {
-            throw new EnrollmentException("Время регистрации на данный курс истекло");
-        }
-
-        // Запись студента на курс
-
-        course.setCurrentEnrollment(course.getCurrentEnrollment() + 1);
-        course = courseRepository.save(course);
-
-        return CourseDtoMapper.convertToDto(course);
-    }
-
-    private boolean isEnrollmentWindowOpen(Course course) {
-        LocalDateTime now = LocalDateTime.now(ZoneId.of("Europe/Moscow")); // Замените на часовой пояс студента
-        return course.getStartDate().isBefore(now) && course.getEndDate().isAfter(now);
-    }
 }

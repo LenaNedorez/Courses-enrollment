@@ -7,7 +7,7 @@ import ru.nedorezova.entity.Enrollment;
 @Service
 public class EnrollmentDtoMapper {
 
-    public EnrollmentDto converttoDto(Enrollment enrollment) {
+    public static EnrollmentDto convertToDto(Enrollment enrollment) {
         EnrollmentDto enrollmentDto = new EnrollmentDto();
         enrollmentDto.setStudentId(enrollment.getStudentId());
         enrollmentDto.setCourseId(enrollment.getCourseId());

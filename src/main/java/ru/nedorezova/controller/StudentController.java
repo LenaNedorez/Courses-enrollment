@@ -33,7 +33,10 @@ public class StudentController {
 
     @GetMapping("/students/{id}/enrollments")
     public List<EnrollmentDto> getStudentEnrollment(@PathVariable Long studentId) {
-        return ResponseEntity.ok(studentService.getStudentEnrollment(studentId));
+        try {
+            return ResponseEntity.ok(studentService.getStudentEnrollment(studentId));
+        } catch ()
+        }
     }
 
     @PostMapping("/students/{studentId}/courses/{courseId}")
