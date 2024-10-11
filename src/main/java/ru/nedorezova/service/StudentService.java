@@ -6,6 +6,7 @@ import ru.nedorezova.dto.CourseDto;
 import ru.nedorezova.dto.EnrollmentDto;
 import ru.nedorezova.dto.StudentDto;
 import ru.nedorezova.entity.Course;
+import ru.nedorezova.entity.Enrollment;
 import ru.nedorezova.entity.Student;
 import ru.nedorezova.exception.CourseNotFoundException;
 import ru.nedorezova.exception.EnrollmentException;
@@ -57,21 +58,24 @@ public class StudentService {
 
     public CourseDto enrollStudent(Long courseId, Long studentId) throws CourseNotFoundException, EnrollmentException {
         Course course = courseRepository.findById(courseId)
-                .orElseThrow(() -> new CourseNotFoundException("Курс не найден"));
+                .orElseThrow(() -> new CourseNotFoundException("Курс не найден."));
 
         // Проверка доступности курса
         if (course.getCurrentEnrollment() >= course.getCapacity()) {
-            throw new EnrollmentException("Курс заполнен, пожалуйста, выберите другой");
+            throw new EnrollmentException("Данный курс заполнен.");
         }
 
         if (!isEnrollmentWindowOpen(course)) {
-            throw new EnrollmentException("Время регистрации на данный курс истекло");
+            throw new EnrollmentException("Время регистрации на данный курс истекло.");
         }
 
         // Запись студента на курс
 
         course.setCurrentEnrollment(course.getCurrentEnrollment() + 1);
-        course = courseRepository.save(course);
+        Enrollment enrollment = new Enrollment();
+        enrollment.setCourseId(courseId);
+        enrollment.setStudentId(studentId);
+        enrollmentRepository.save(enrollment);
 
         return CourseDtoMapper.convertToDto(course);
     }
