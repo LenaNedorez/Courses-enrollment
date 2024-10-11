@@ -2,6 +2,12 @@ package ru.nedorezova.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.nedorezova.entity.Student;
+import ru.nedorezova.repository.CourseRepository;
+import ru.nedorezova.repository.EnrollmentRepository;
+import ru.nedorezova.repository.StudentRepository;
+
+import java.util.List;
 
 @Service
 public class StudentService {
