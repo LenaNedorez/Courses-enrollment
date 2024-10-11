@@ -56,7 +56,7 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
-    public CourseDto enrollStudent(Long courseId, Long studentId) throws CourseNotFoundException, EnrollmentException {
+    public CourseDto enrollStudent(Long courseId, Long studentId, String timezone) throws CourseNotFoundException, EnrollmentException {
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new CourseNotFoundException("Курс не найден."));
 
@@ -65,7 +65,7 @@ public class StudentService {
             throw new EnrollmentException("Данный курс заполнен.");
         }
 
-        if (!isEnrollmentWindowOpen(course)) {
+        if (!isEnrollmentWindowOpen(course, timezone)) {
             throw new EnrollmentException("Время регистрации на данный курс истекло.");
         }
 
@@ -80,9 +80,9 @@ public class StudentService {
         return CourseDtoMapper.convertToDto(course);
     }
 
-    private boolean isEnrollmentWindowOpen(Course course) {
-        LocalDateTime now = LocalDateTime.now(ZoneId.of("Europe/Moscow"));
-        return course.getStartDate().isBefore(now) && course.getEndDate().isAfter(now);
+    private boolean isEnrollmentWindowOpen(Course course, String timezone) {
+        LocalDateTime timeOfEnrollment = LocalDateTime.now(ZoneId.of(timezone));
+        return course.getStartDate().isBefore(timeOfEnrollment) && course.getEndDate().isAfter(timeOfEnrollment);
     }
 
 }

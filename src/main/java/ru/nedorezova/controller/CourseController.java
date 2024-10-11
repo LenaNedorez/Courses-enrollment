@@ -4,18 +4,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.nedorezova.dto.CourseDto;
-import ru.nedorezova.exception.EnrollmentException;
 import ru.nedorezova.exception.CourseNotFoundException;
 import ru.nedorezova.service.CourseService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
 public class CourseController {
 
+    private final CourseService courseService;
+
     @Autowired
-    private CourseService courseService;
+    public CourseController(CourseService courseService) {
+        this.courseService = courseService;
+    }
 
     @GetMapping("/courses")
     public ResponseEntity<List<CourseDto>> getCourses() {
