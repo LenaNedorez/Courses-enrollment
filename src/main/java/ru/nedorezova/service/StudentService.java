@@ -56,11 +56,10 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
-    public CourseDto enrollStudent(Long courseId, Long studentId, String timezone) throws CourseNotFoundException, EnrollmentException {
+    public synchronized CourseDto enrollStudent(Long courseId, Long studentId, String timezone) throws CourseNotFoundException, EnrollmentException {
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new CourseNotFoundException("Курс не найден."));
 
-        // Проверка доступности курса
         if (course.getCurrentEnrollment() >= course.getCapacity()) {
             throw new EnrollmentException("Данный курс заполнен.");
         }
@@ -68,8 +67,6 @@ public class StudentService {
         if (!isEnrollmentWindowOpen(course, timezone)) {
             throw new EnrollmentException("Время регистрации на данный курс истекло.");
         }
-
-        // Запись студента на курс
 
         course.setCurrentEnrollment(course.getCurrentEnrollment() + 1);
         Enrollment enrollment = new Enrollment();
