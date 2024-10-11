@@ -53,16 +53,6 @@ public class CourseService {
         return CourseDtoMapper.convertToDto(course);
     }
 
-//    public void unenrollStudent(Long courseId, Long studentId) {
-//        Course course = courseRepository.findById(courseId)
-//                .orElseThrow(() -> new NotFoundException("Такой курс не найден"));
-//
-//        // ... логика проверки возможности отмены записи (например, проверка даты)
-//
-//        course.setCurrentEnrollment(course.getCurrentEnrollment() - 1);
-//        courseRepository.save(course);
-//    }
-
     private boolean isEnrollmentWindowOpen(Course course) {
         LocalDateTime now = LocalDateTime.now(ZoneId.of("Europe/Moscow")); // Замените на часовой пояс студента
         return course.getStartDate().isBefore(now) && course.getEndDate().isAfter(now);

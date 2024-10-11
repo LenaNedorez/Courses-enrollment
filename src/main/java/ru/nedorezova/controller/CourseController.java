@@ -31,16 +31,4 @@ public class CourseController {
         }
     }
 
-    @PostMapping("/students/{studentId}/courses/{courseId}")
-    public ResponseEntity<CourseDto> enrollStudent(@PathVariable Long studentId,
-                                                   @PathVariable Long courseId) {
-        try {
-            return ResponseEntity.ok(courseService.enrollStudent(courseId, studentId));
-        } catch (EnrollmentException e) {
-            return ResponseEntity.badRequest().build();
-        } catch (CourseNotFoundException e) {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
 }
