@@ -3,8 +3,10 @@ package ru.nedorezova.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.nedorezova.dto.EnrollmentDto;
+import ru.nedorezova.dto.StudentDto;
 import ru.nedorezova.entity.Course;
 import ru.nedorezova.entity.Student;
+import ru.nedorezova.exception.StudentNotFoundException;
 import ru.nedorezova.repository.CourseRepository;
 import ru.nedorezova.repository.EnrollmentRepository;
 import ru.nedorezova.repository.StudentRepository;
@@ -24,7 +26,7 @@ public class StudentService {
     @Autowired
     private EnrollmentRepository enrollmentRepository;
 
-    public List<Student> getAllStudents() {
+    public List<StudentDto> getAllStudents() {
         List<Student> students = studentRepository.findAll();
         return students.stream()
                 .map(StudentDtoMapper::convertToDto)
@@ -32,7 +34,7 @@ public class StudentService {
     }
 
     public Student getStudent(Long id) {
-        return studentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Student not found"));
+        return studentRepository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student not found"));
     }
 
     public List<EnrollmentDto> getStudentEnrollment(Long studentId) {

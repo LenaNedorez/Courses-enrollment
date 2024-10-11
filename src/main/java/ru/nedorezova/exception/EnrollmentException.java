@@ -1,8 +1,9 @@
 package ru.nedorezova.exception;
 
-public class EnrollmentException extends RuntimeException {
+public class EnrollmentException extends Exception {
 
     public EnrollmentException(String message) {
         super(message);
     }
+
 }

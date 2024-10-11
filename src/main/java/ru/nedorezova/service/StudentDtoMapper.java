@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class StudentDtoMapper {
 
-    public StudentDto toDto(Student student) {
+    public static StudentDto convertToDto(Student student) {
         StudentDto studentDto = new StudentDto();
         studentDto.setId(student.getId());
         studentDto.setName(student.getName());
