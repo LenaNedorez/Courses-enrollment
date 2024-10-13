@@ -56,7 +56,7 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
-    public synchronized CourseDto enrollStudent(Long courseId, Long studentId, String timezone) throws CourseNotFoundException, EnrollmentException {
+    public CourseDto enrollStudent(Long courseId, Long studentId, String timezone) throws CourseNotFoundException, EnrollmentException {
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new CourseNotFoundException("Курс не найден."));
 

@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 @Getter
 @Setter
@@ -27,6 +28,6 @@ public class Course {
     private LocalDateTime endDate;
 
     @ManyToMany(mappedBy = "courses")
-    private List<Student> students = new ArrayList<>();
+    private List<Student> students = new CopyOnWriteArrayList<>();
 
 }

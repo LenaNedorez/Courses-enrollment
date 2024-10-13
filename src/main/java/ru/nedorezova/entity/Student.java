@@ -9,6 +9,7 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 @Getter
 @Setter
@@ -30,6 +31,6 @@ public class Student {
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
-    List<Course> courseList = new ArrayList<>();
+    List<Course> courseList = new CopyOnWriteArrayList<>();
 
 }
