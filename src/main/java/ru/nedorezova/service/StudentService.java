@@ -44,7 +44,7 @@ public class StudentService {
     }
 
     public StudentDto getStudent(Long id) throws StudentNotFoundException {
-        Student student = studentRepository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student not found"));
+        Student student = studentRepository.findById(id).orElseThrow(() -> new StudentNotFoundException("Студент не найден"));
         return StudentDtoMapper.convertToDto(student);
     }
 

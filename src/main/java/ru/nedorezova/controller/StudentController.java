@@ -1,5 +1,7 @@
 package ru.nedorezova.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +18,7 @@ import java.util.List;
 @RestController
 public class StudentController {
 
+    private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
     private final StudentService studentService;
 
     @Autowired
@@ -33,6 +36,7 @@ public class StudentController {
         try {
             return ResponseEntity.ok(studentService.getStudent(id));
         } catch (StudentNotFoundException e){
+            logger.error("Ошибка при получении студента с ID: {}", id, e);
             return ResponseEntity.notFound().build();
         }
 }
@@ -49,8 +53,10 @@ public class StudentController {
         try {
             return ResponseEntity.ok(studentService.enrollStudent(courseId, studentId, timezone));
         } catch (EnrollmentException e) {
+            logger.error("Ошибка при записи студента на курс: {}, {}, {}", studentId, courseId, timezone, e);
             return ResponseEntity.badRequest().build();
         } catch (CourseNotFoundException e) {
+            logger.error("Ошибка при поиске курса с ID: {}", courseId, e);
             return ResponseEntity.notFound().build();
         }
     }
