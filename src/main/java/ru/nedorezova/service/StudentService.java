@@ -11,6 +11,9 @@ import ru.nedorezova.entity.Student;
 import ru.nedorezova.exception.CourseNotFoundException;
 import ru.nedorezova.exception.EnrollmentException;
 import ru.nedorezova.exception.StudentNotFoundException;
+import ru.nedorezova.mappers.CourseMapper;
+import ru.nedorezova.mappers.EnrollmentMapper;
+import ru.nedorezova.mappers.StudentMapper;
 import ru.nedorezova.repository.CourseRepository;
 import ru.nedorezova.repository.EnrollmentRepository;
 import ru.nedorezova.repository.StudentRepository;
@@ -39,20 +42,20 @@ public class StudentService {
     public List<StudentDto> getAllStudents() {
         List<Student> students = studentRepository.findAll();
         return students.stream()
-                .map(StudentDtoMapper::convertToDto)
+                .map(StudentMapper.INSTANCE::toDto)
                 .collect(Collectors.toList());
     }
 
     public StudentDto getStudent(Long id) throws StudentNotFoundException {
         Student student = studentRepository.findById(id).orElseThrow(() -> new StudentNotFoundException("Студент не найден"));
-        return StudentDtoMapper.convertToDto(student);
+        return StudentMapper.INSTANCE.toDto(student);
     }
 
     public List<EnrollmentDto> getStudentEnrollment(Long studentId) {
         return enrollmentRepository
                 .findByStudentId(studentId)
                 .stream()
-                .map(EnrollmentDtoMapper::convertToDto)
+                .map(EnrollmentMapper.INSTANCE::toDto)
                 .collect(Collectors.toList());
     }
 
@@ -74,7 +77,7 @@ public class StudentService {
         enrollment.setStudentId(studentId);
         enrollmentRepository.save(enrollment);
 
-        return CourseDtoMapper.convertToDto(course);
+        return CourseMapper.INSTANCE.toDto(course);
     }
 
     private boolean isEnrollmentWindowOpen(Course course, String timezone) {
