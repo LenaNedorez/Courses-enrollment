@@ -39,16 +39,4 @@ public class StudentControllerTest {
         verify(studentService, times(1)).getAllStudents();
     }
 
-    @Test
-    public void testGetStudentEnrollment() {
-        Long studentId = 1L;
-        List<EnrollmentDto> enrollments = Arrays.asList(new EnrollmentDto(), new EnrollmentDto());
-        when(studentService.getStudentEnrollment(studentId)).thenReturn(enrollments);
-
-        ResponseEntity<List<EnrollmentDto>> response = studentController.getStudentEnrollment(studentId);
-
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(enrollments, response.getBody());
-        verify(studentService, times(1)).getStudentEnrollment(studentId);
-    }
 }

@@ -40,11 +40,6 @@ public class StudentController {
             logger.error("Ошибка при получении студента с ID: {}", id, e);
             return ResponseEntity.notFound().build();
         }
-}
-
-    @GetMapping("/students/{studentId}/enrollments")
-    public ResponseEntity<List<EnrollmentDto>> getStudentEnrollment(@PathVariable Long studentId) {
-            return ResponseEntity.ok(studentService.getStudentEnrollment(studentId));
     }
 
     @PostMapping("/students/{studentId}/courses/{courseId}")
