@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -32,4 +33,7 @@ public class Student {
     )
     List<Course> courseList = new CopyOnWriteArrayList<>();
 
+    public List<Course> getCourses() {
+        return courseList;
+    }
 }

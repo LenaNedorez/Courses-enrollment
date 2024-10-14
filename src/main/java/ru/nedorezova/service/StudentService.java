@@ -59,7 +59,7 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
-    public CourseDto enrollStudent(Long courseId, Long studentId, String timezone) throws CourseNotFoundException, EnrollmentException {
+    public CourseDto enrollStudent(Long courseId, Long studentId, String timezone) throws CourseNotFoundException, EnrollmentException, StudentNotFoundException {
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new CourseNotFoundException("Курс не найден."));
 
@@ -71,10 +71,21 @@ public class StudentService {
             throw new EnrollmentException("Время регистрации на данный курс истекло.");
         }
 
+        course.getStudents().add(studentRepository.findById(studentId)
+                .orElseThrow(() -> new StudentNotFoundException("Студент не найден.")));
+
+        Student student = studentRepository.findById(studentId)
+                .orElseThrow(() -> new StudentNotFoundException("Студент не найден."));
+        student.getCourses().add(course);
+
+        courseRepository.save(course);
+        studentRepository.save(student);
+
         course.setCurrentEnrollment(course.getCurrentEnrollment() + 1);
         Enrollment enrollment = new Enrollment();
         enrollment.setCourseId(courseId);
         enrollment.setStudentId(studentId);
+
         enrollmentRepository.save(enrollment);
 
         return CourseMapper.INSTANCE.toDto(course);

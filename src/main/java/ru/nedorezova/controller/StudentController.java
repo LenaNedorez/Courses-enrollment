@@ -1,5 +1,6 @@
 package ru.nedorezova.controller;
 
+import javassist.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,6 +58,9 @@ public class StudentController {
             return ResponseEntity.badRequest().build();
         } catch (CourseNotFoundException e) {
             logger.error("Ошибка при поиске курса с ID: {}", courseId, e);
+            return ResponseEntity.notFound().build();
+        } catch (StudentNotFoundException e) {
+            logger.error("Ошибка при поиске студента с ID: {}", studentId, e);
             return ResponseEntity.notFound().build();
         }
     }

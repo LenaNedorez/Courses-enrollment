@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.nedorezova.dto.CourseDto;
 import ru.nedorezova.exception.CourseNotFoundException;
+import ru.nedorezova.exception.StudentNotFoundException;
 import ru.nedorezova.service.CourseService;
 
 import java.util.List;
@@ -33,6 +34,16 @@ public class CourseController {
             return ResponseEntity.ok(courseService.getCourse(courseId));
         } catch (CourseNotFoundException e) {
             logger.error("Ошибка при получении курса с ID: {}", courseId, e);
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/students/{studentId}/courses")
+    public ResponseEntity<List<CourseDto>> getCoursesByStudent(@PathVariable Long studentId) {
+        try {
+            return ResponseEntity.ok(courseService.getCoursesByStudent(studentId));
+        } catch (StudentNotFoundException e) {
+            logger.error("Ошибка при получении курсов студента с ID: {}", studentId, e);
             return ResponseEntity.notFound().build();
         }
     }
