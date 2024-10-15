@@ -1,0 +1,24 @@
+16:53:07.511 [main] ERROR r.n.controller.StudentController - Ошибка при записи студента на курс: 1, 2, Europe/Moscow
+ru.nedorezova.exception.EnrollmentException: null
+16:53:07.595 [main] ERROR r.n.controller.StudentController - Ошибка при получении студента с ID: 1
+ru.nedorezova.exception.StudentNotFoundException: null
+16:53:07.608 [main] ERROR r.n.controller.StudentController - Ошибка при поиске курса с ID: 2
+ru.nedorezova.exception.CourseNotFoundException: null
+16:53:07.612 [main] ERROR r.n.controller.StudentController - Ошибка при поиске студента с ID: 1
+ru.nedorezova.exception.StudentNotFoundException: null
+16:53:07.882 [main] ERROR r.n.controller.CourseController - Ошибка при получении курса с ID: 1
+ru.nedorezova.exception.CourseNotFoundException: null
+16:53:07.886 [main] ERROR r.n.controller.CourseController - Ошибка при получении курсов студента с ID: 1
+ru.nedorezova.exception.StudentNotFoundException: null
+17:12:47.845 [main] ERROR r.n.controller.StudentController - Ошибка при записи студента на курс: 1, 2, Europe/Moscow
+ru.nedorezova.exception.EnrollmentException: null
+17:12:47.918 [main] ERROR r.n.controller.StudentController - Ошибка при получении студента с ID: 1
+ru.nedorezova.exception.StudentNotFoundException: null
+17:12:47.931 [main] ERROR r.n.controller.StudentController - Ошибка при поиске курса с ID: 2
+ru.nedorezova.exception.CourseNotFoundException: null
+17:12:47.934 [main] ERROR r.n.controller.StudentController - Ошибка при поиске студента с ID: 1
+ru.nedorezova.exception.StudentNotFoundException: null
+17:12:48.191 [main] ERROR r.n.controller.CourseController - Ошибка при получении курса с ID: 1
+ru.nedorezova.exception.CourseNotFoundException: null
+17:12:48.195 [main] ERROR r.n.controller.CourseController - Ошибка при получении курсов студента с ID: 1
+ru.nedorezova.exception.StudentNotFoundException: null

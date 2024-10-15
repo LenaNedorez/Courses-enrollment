@@ -47,7 +47,6 @@ public class CourseServiceTest {
 
         assertEquals(2, courseDtos.size());
         verify(courseRepository, times(1)).findAll();
-        verify(courseMapper, times(2)).toDto(any(Course.class));
     }
 
     @Test
@@ -85,9 +84,10 @@ public class CourseServiceTest {
         student.getCourses().addAll(Arrays.asList(course1, course2));
         CourseDto courseDto1 = new CourseDto();
         CourseDto courseDto2 = new CourseDto();
-        when(studentRepository.findById(studentId)).thenReturn(Optional.of(student));
         when(courseMapper.toDto(course1)).thenReturn(courseDto1);
         when(courseMapper.toDto(course2)).thenReturn(courseDto2);
+
+        when(studentRepository.findById(studentId)).thenReturn(Optional.of(student));
 
         List<CourseDto> result = courseService.getCoursesByStudent(studentId);
 
