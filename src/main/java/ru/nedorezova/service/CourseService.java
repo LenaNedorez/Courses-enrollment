@@ -11,6 +11,7 @@ import ru.nedorezova.mappers.CourseMapper;
 import ru.nedorezova.repository.CourseRepository;
 import ru.nedorezova.repository.StudentRepository;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,6 +29,9 @@ public class CourseService {
 
     public List<CourseDto> getCourses() {
         List<Course> courses = courseRepository.findAll();
+        if (courses.isEmpty()) {
+            return Collections.emptyList();
+        }
         return courses.stream()
                 .map(CourseMapper.INSTANCE::toDto)
                 .collect(Collectors.toList());
