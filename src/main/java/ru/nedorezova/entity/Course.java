@@ -5,8 +5,8 @@ import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 @Getter
 @Setter
@@ -26,7 +26,16 @@ public class Course {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 
+    public Course(Long id, String name, int capacity, int currentEnrollment, LocalDateTime startDate, LocalDateTime endDate) {
+        this.id = id;
+        this.name = name;
+        this.capacity = capacity;
+        this.currentEnrollment = currentEnrollment;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
     @ManyToMany(mappedBy = "courses")
-    private List<Student> students = new CopyOnWriteArrayList<>();
+    private List<Student> students = new ArrayList<>();
 
 }

@@ -7,9 +7,8 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 @Getter
 @Setter
@@ -25,13 +24,19 @@ public class Student {
     private String name;
     private String surname;
 
+    public Student(Long id, String name, String surname) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+    }
+
     @ManyToMany
     @JoinTable(
             name = "enrollment",
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
-    List<Course> courseList = new CopyOnWriteArrayList<>();
+    List<Course> courseList = new ArrayList<>();
 
     public List<Course> getCourses() {
         return courseList;

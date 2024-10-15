@@ -18,6 +18,7 @@ import ru.nedorezova.repository.CourseRepository;
 import ru.nedorezova.repository.EnrollmentRepository;
 import ru.nedorezova.repository.StudentRepository;
 
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
@@ -59,6 +60,7 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional(rollbackOn = Exception.class)
     public CourseDto enrollStudent(Long courseId, Long studentId, String timezone) throws CourseNotFoundException, EnrollmentException, StudentNotFoundException {
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new CourseNotFoundException("Курс не найден."));
@@ -71,11 +73,10 @@ public class StudentService {
             throw new EnrollmentException("Время регистрации на данный курс истекло.");
         }
 
-        course.getStudents().add(studentRepository.findById(studentId)
-                .orElseThrow(() -> new StudentNotFoundException("Студент не найден.")));
-
         Student student = studentRepository.findById(studentId)
                 .orElseThrow(() -> new StudentNotFoundException("Студент не найден."));
+
+        course.getStudents().add(student);
         student.getCourses().add(course);
 
         courseRepository.save(course);
