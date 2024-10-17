@@ -7,6 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CoursesEnrollmentApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CoursesEnrollmentApplication.class, args);
+
+        try {
+            SpringApplication.run(CoursesEnrollmentApplication.class, args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
