@@ -6,8 +6,8 @@ import ru.nedorezova.entity.Course;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-10-17T17:54:30+0300",
-    comments = "version: 1.6.2, compiler: javac, environment: Java 17.0.8 (Oracle Corporation)"
+    date = "2024-10-18T22:27:58+0300",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.8 (Oracle Corporation)"
 )
 public class CourseMapperImpl implements CourseMapper {
 
