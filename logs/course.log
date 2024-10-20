@@ -1918,3 +1918,409 @@ ru.nedorezova.exception.StudentNotFoundException: null
 13:11:18.981 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 13:11:18.997 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 13:11:19.001 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:11:51.167 [main] INFO  r.n.CoursesEnrollmentApplication - Starting CoursesEnrollmentApplication using Java 17.0.8 on WIN-ULM3ECQLTC6 with PID 12588 (C:\Users\terapanthera\IdeaProjects\Courses enrollment\target\classes started by terapanthera in C:\Users\terapanthera\IdeaProjects\Courses enrollment)
+13:11:51.170 [main] INFO  r.n.CoursesEnrollmentApplication - No active profile set, falling back to default profiles: default
+13:11:51.773 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:11:51.836 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+13:11:52.451 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+13:11:52.464 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+13:11:52.465 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:11:52.465 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+13:11:52.546 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:11:52.546 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1326 ms
+13:11:52.644 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:11:52.875 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:11:52.996 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:11:53.057 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.29.Final
+13:11:53.191 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+13:11:53.327 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+13:11:53.914 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:11:53.914 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - отношение "enrollment" не существует, пропускается
+13:11:53.915 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:11:53.915 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - отношение "enrollment" не существует, пропускается
+13:11:53.916 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:11:53.916 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - таблица "course" не существует, пропускается
+13:11:53.916 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:11:53.916 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - таблица "enrollment" не существует, пропускается
+13:11:53.916 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+13:11:53.916 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - таблица "student" не существует, пропускается
+13:11:53.945 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:11:53.952 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:11:54.443 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:11:54.565 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+13:11:54.777 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+13:11:54.805 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+13:11:54.815 [main] INFO  r.n.CoursesEnrollmentApplication - Started CoursesEnrollmentApplication in 3.969 seconds (JVM running for 4.414)
+13:13:55.510 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+13:13:55.511 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:13:55.511 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+13:13:55.526 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:13:55.529 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:06:11.798 [main] INFO  r.n.CoursesEnrollmentApplication - Starting CoursesEnrollmentApplication using Java 17.0.8 on WIN-ULM3ECQLTC6 with PID 8168 (C:\Users\terapanthera\IdeaProjects\Courses enrollment\target\classes started by terapanthera in C:\Users\terapanthera\IdeaProjects\Courses enrollment)
+14:06:11.801 [main] INFO  r.n.CoursesEnrollmentApplication - No active profile set, falling back to default profiles: default
+14:06:12.476 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:06:12.548 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+14:06:13.205 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+14:06:13.221 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+14:06:13.222 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:06:13.222 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+14:06:13.318 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:06:13.318 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1461 ms
+14:06:13.426 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:06:13.650 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:06:13.797 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+14:06:13.899 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.29.Final
+14:06:14.042 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+14:06:14.171 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+14:06:14.841 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:06:14.841 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - ограничение "fkbhhcqkw1px6yljqg92m0sh2gt" в таблице "enrollment" не существует, пропускается
+14:06:14.841 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:06:14.841 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - ограничение "fkio7fsy3vhvfgv7c0gjk15nyk4" в таблице "enrollment" не существует, пропускается
+14:06:14.846 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+14:06:14.846 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - удаление распространяется на объект ограничение enrollment_course_id_fkey в отношении таблица enrollment
+14:06:14.881 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+14:06:14.888 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:06:15.314 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:06:15.422 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+14:06:15.650 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+14:06:15.693 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+14:06:15.709 [main] INFO  r.n.CoursesEnrollmentApplication - Started CoursesEnrollmentApplication in 4.267 seconds (JVM running for 4.73)
+14:08:53.446 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+14:08:53.447 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+14:08:53.447 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+14:08:53.463 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:08:53.473 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:28:30.707 [main] INFO  r.n.CoursesEnrollmentApplication - Starting CoursesEnrollmentApplication using Java 17.0.8 on WIN-ULM3ECQLTC6 with PID 16860 (C:\Users\terapanthera\IdeaProjects\Courses enrollment\target\classes started by terapanthera in C:\Users\terapanthera\IdeaProjects\Courses enrollment)
+15:28:30.710 [main] INFO  r.n.CoursesEnrollmentApplication - No active profile set, falling back to default profiles: default
+15:28:31.320 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:28:31.386 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+15:28:31.974 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+15:28:31.984 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+15:28:31.984 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:28:31.984 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+15:28:32.063 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:28:32.063 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1304 ms
+15:28:32.295 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+15:28:32.343 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.29.Final
+15:28:32.465 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:28:32.554 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:28:32.809 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:28:32.824 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+15:28:33.511 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+15:28:33.511 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - отношение "enrollment" не существует, пропускается
+15:28:33.511 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+15:28:33.511 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - отношение "enrollment" не существует, пропускается
+15:28:33.512 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+15:28:33.512 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - таблица "course" не существует, пропускается
+15:28:33.512 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+15:28:33.512 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - таблица "enrollment" не существует, пропускается
+15:28:33.513 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+15:28:33.513 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - таблица "student" не существует, пропускается
+15:28:33.547 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:28:33.555 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:28:33.576 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [course.sql]: INSERT INTO course (name, capacity, start_date, end_date) VALUES ('Math', 30, '2024-02-15 10:00:00+03', '2024-02-22 18:00:00+03'), ('Physics', 20, '2024-02-18 12:00:00+03', '2024-02-25 16:00:00+03'), ('Chemistry', 15, '2024-02-20 14:00:00+03', '2024-02-27 20:00:00+03'); nested exception is org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "current_enrollment" отношения "course" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (1, 30, null, 2024-02-22 18:00:00, Math, 2024-02-15 10:00:00).
+15:28:33.576 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:28:33.579 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:28:33.583 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+15:28:33.591 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:28:33.604 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [course.sql]: INSERT INTO course (name, capacity, start_date, end_date) VALUES ('Math', 30, '2024-02-15 10:00:00+03', '2024-02-22 18:00:00+03'), ('Physics', 20, '2024-02-18 12:00:00+03', '2024-02-25 16:00:00+03'), ('Chemistry', 15, '2024-02-20 14:00:00+03', '2024-02-27 20:00:00+03'); nested exception is org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "current_enrollment" отношения "course" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (1, 30, null, 2024-02-22 18:00:00, Math, 2024-02-15 10:00:00).
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:610)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at ru.nedorezova.CoursesEnrollmentApplication.main(CoursesEnrollmentApplication.java:12)
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [course.sql]: INSERT INTO course (name, capacity, start_date, end_date) VALUES ('Math', 30, '2024-02-15 10:00:00+03', '2024-02-22 18:00:00+03'), ('Physics', 20, '2024-02-18 12:00:00+03', '2024-02-25 16:00:00+03'), ('Chemistry', 15, '2024-02-20 14:00:00+03', '2024-02-27 20:00:00+03'); nested exception is org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "current_enrollment" отношения "course" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (1, 30, null, 2024-02-22 18:00:00, Math, 2024-02-15 10:00:00).
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:622)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:49)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.runScripts(DataSourceInitializer.java:202)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:119)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:91)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:38)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:421)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:378)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.publishEventIfRequired(DataSourceInitializedPublisher.java:111)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.postProcessAfterInitialization(DataSourceInitializedPublisher.java:102)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:437)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	... 16 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "current_enrollment" отношения "course" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (1, 30, null, 2024-02-22 18:00:00, Math, 2024-02-15 10:00:00).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:341)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:326)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:302)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:297)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:601)
+	... 32 common frames omitted
+15:30:13.573 [main] INFO  r.n.CoursesEnrollmentApplication - Starting CoursesEnrollmentApplication using Java 17.0.8 on WIN-ULM3ECQLTC6 with PID 17400 (C:\Users\terapanthera\IdeaProjects\Courses enrollment\target\classes started by terapanthera in C:\Users\terapanthera\IdeaProjects\Courses enrollment)
+15:30:13.576 [main] INFO  r.n.CoursesEnrollmentApplication - No active profile set, falling back to default profiles: default
+15:30:14.188 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:30:14.252 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 3 JPA repository interfaces.
+15:30:14.867 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+15:30:14.879 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+15:30:14.879 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:30:14.880 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+15:30:14.963 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:30:14.963 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1331 ms
+15:30:15.212 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+15:30:15.261 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.29.Final
+15:30:15.380 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:30:15.470 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:30:15.719 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:30:15.737 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+15:30:16.456 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:30:16.463 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:30:16.484 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [enrollment.sql]: INSERT INTO enrollment (student_id, course_id) VALUES (1, 1), (2, 1), (3, 2); nested exception is org.postgresql.util.PSQLException: ОШИБКА: INSERT или UPDATE в таблице "enrollment" нарушает ограничение внешнего ключа "fkbhhcqkw1px6yljqg92m0sh2gt"
+  Подробности: Ключ (course_id)=(1) отсутствует в таблице "course".
+15:30:16.484 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:30:16.487 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:30:16.490 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+15:30:16.501 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:30:16.519 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [enrollment.sql]: INSERT INTO enrollment (student_id, course_id) VALUES (1, 1), (2, 1), (3, 2); nested exception is org.postgresql.util.PSQLException: ОШИБКА: INSERT или UPDATE в таблице "enrollment" нарушает ограничение внешнего ключа "fkbhhcqkw1px6yljqg92m0sh2gt"
+  Подробности: Ключ (course_id)=(1) отсутствует в таблице "course".
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:610)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at ru.nedorezova.CoursesEnrollmentApplication.main(CoursesEnrollmentApplication.java:12)
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [enrollment.sql]: INSERT INTO enrollment (student_id, course_id) VALUES (1, 1), (2, 1), (3, 2); nested exception is org.postgresql.util.PSQLException: ОШИБКА: INSERT или UPDATE в таблице "enrollment" нарушает ограничение внешнего ключа "fkbhhcqkw1px6yljqg92m0sh2gt"
+  Подробности: Ключ (course_id)=(1) отсутствует в таблице "course".
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:622)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:49)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.runScripts(DataSourceInitializer.java:202)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:119)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:91)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:38)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:421)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:378)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.publishEventIfRequired(DataSourceInitializedPublisher.java:111)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.postProcessAfterInitialization(DataSourceInitializedPublisher.java:102)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:437)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	... 16 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: INSERT или UPDATE в таблице "enrollment" нарушает ограничение внешнего ключа "fkbhhcqkw1px6yljqg92m0sh2gt"
+  Подробности: Ключ (course_id)=(1) отсутствует в таблице "course".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:341)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:326)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:302)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:297)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:601)
+	... 32 common frames omitted
+15:31:55.386 [main] INFO  r.n.CoursesEnrollmentApplication - Starting CoursesEnrollmentApplication using Java 17.0.8 on WIN-ULM3ECQLTC6 with PID 10996 (C:\Users\terapanthera\IdeaProjects\Courses enrollment\target\classes started by terapanthera in C:\Users\terapanthera\IdeaProjects\Courses enrollment)
+15:31:55.388 [main] INFO  r.n.CoursesEnrollmentApplication - No active profile set, falling back to default profiles: default
+15:31:55.990 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:31:56.053 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+15:31:56.648 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+15:31:56.661 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+15:31:56.661 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:31:56.661 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+15:31:56.740 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:31:56.740 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1300 ms
+15:31:56.977 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+15:31:57.027 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.29.Final
+15:31:57.155 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:31:57.247 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:31:57.471 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:31:57.487 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+15:31:58.224 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:31:58.231 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:31:58.248 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [course.sql]: INSERT INTO course (name, capacity, start_date, end_date) VALUES ('Math', 30, '2024-02-15 10:00:00+03', '2024-02-22 18:00:00+03'), ('Physics', 20, '2024-02-18 12:00:00+03', '2024-02-25 16:00:00+03'), ('Chemistry', 15, '2024-02-20 14:00:00+03', '2024-02-27 20:00:00+03'); nested exception is org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "current_enrollment" отношения "course" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (1, 30, null, 2024-02-22 18:00:00, Math, 2024-02-15 10:00:00).
+15:31:58.249 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:31:58.252 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:31:58.257 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+15:31:58.267 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:31:58.283 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [course.sql]: INSERT INTO course (name, capacity, start_date, end_date) VALUES ('Math', 30, '2024-02-15 10:00:00+03', '2024-02-22 18:00:00+03'), ('Physics', 20, '2024-02-18 12:00:00+03', '2024-02-25 16:00:00+03'), ('Chemistry', 15, '2024-02-20 14:00:00+03', '2024-02-27 20:00:00+03'); nested exception is org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "current_enrollment" отношения "course" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (1, 30, null, 2024-02-22 18:00:00, Math, 2024-02-15 10:00:00).
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:610)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at ru.nedorezova.CoursesEnrollmentApplication.main(CoursesEnrollmentApplication.java:12)
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [course.sql]: INSERT INTO course (name, capacity, start_date, end_date) VALUES ('Math', 30, '2024-02-15 10:00:00+03', '2024-02-22 18:00:00+03'), ('Physics', 20, '2024-02-18 12:00:00+03', '2024-02-25 16:00:00+03'), ('Chemistry', 15, '2024-02-20 14:00:00+03', '2024-02-27 20:00:00+03'); nested exception is org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "current_enrollment" отношения "course" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (1, 30, null, 2024-02-22 18:00:00, Math, 2024-02-15 10:00:00).
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:622)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:49)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.runScripts(DataSourceInitializer.java:202)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:119)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:91)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:38)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:421)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:378)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.publishEventIfRequired(DataSourceInitializedPublisher.java:111)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.postProcessAfterInitialization(DataSourceInitializedPublisher.java:102)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:437)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	... 16 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "current_enrollment" отношения "course" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (1, 30, null, 2024-02-22 18:00:00, Math, 2024-02-15 10:00:00).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:341)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:326)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:302)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:297)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:601)
+	... 32 common frames omitted
+15:34:17.221 [main] INFO  r.n.CoursesEnrollmentApplication - Starting CoursesEnrollmentApplication using Java 17.0.8 on WIN-ULM3ECQLTC6 with PID 15948 (C:\Users\terapanthera\IdeaProjects\Courses enrollment\target\classes started by terapanthera in C:\Users\terapanthera\IdeaProjects\Courses enrollment)
+15:34:17.223 [main] INFO  r.n.CoursesEnrollmentApplication - No active profile set, falling back to default profiles: default
+15:34:17.877 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:34:17.943 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+15:34:18.556 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+15:34:18.566 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+15:34:18.566 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:34:18.566 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+15:34:18.644 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:34:18.644 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1369 ms
+15:34:18.906 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+15:34:18.960 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.29.Final
+15:34:19.081 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+15:34:19.170 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:34:19.381 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:34:19.398 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+15:34:20.124 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+15:34:20.131 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:34:20.153 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [course.sql]: INSERT INTO course (name, capacity, start_date, end_date) VALUES ('Math', 30, '2024-02-15 10:00:00+03', '2024-02-22 18:00:00+03'), ('Physics', 20, '2024-02-18 12:00:00+03', '2024-02-25 16:00:00+03'), ('Chemistry', 15, '2024-02-20 14:00:00+03', '2024-02-27 20:00:00+03'); nested exception is org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "current_enrollment" отношения "course" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (1, 30, null, 2024-02-22 18:00:00, Math, 2024-02-15 10:00:00).
+15:34:20.153 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:34:20.157 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:34:20.160 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+15:34:20.169 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+15:34:20.184 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [course.sql]: INSERT INTO course (name, capacity, start_date, end_date) VALUES ('Math', 30, '2024-02-15 10:00:00+03', '2024-02-22 18:00:00+03'), ('Physics', 20, '2024-02-18 12:00:00+03', '2024-02-25 16:00:00+03'), ('Chemistry', 15, '2024-02-20 14:00:00+03', '2024-02-27 20:00:00+03'); nested exception is org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "current_enrollment" отношения "course" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (1, 30, null, 2024-02-22 18:00:00, Math, 2024-02-15 10:00:00).
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:610)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:769)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at ru.nedorezova.CoursesEnrollmentApplication.main(CoursesEnrollmentApplication.java:12)
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of class path resource [course.sql]: INSERT INTO course (name, capacity, start_date, end_date) VALUES ('Math', 30, '2024-02-15 10:00:00+03', '2024-02-22 18:00:00+03'), ('Physics', 20, '2024-02-18 12:00:00+03', '2024-02-25 16:00:00+03'), ('Chemistry', 15, '2024-02-20 14:00:00+03', '2024-02-27 20:00:00+03'); nested exception is org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "current_enrollment" отношения "course" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (1, 30, null, 2024-02-22 18:00:00, Math, 2024-02-15 10:00:00).
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:622)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:49)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.runScripts(DataSourceInitializer.java:202)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:119)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:91)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:38)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:421)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:378)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.publishEventIfRequired(DataSourceInitializedPublisher.java:111)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.postProcessAfterInitialization(DataSourceInitializedPublisher.java:102)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:437)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	... 16 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: значение NULL в столбце "current_enrollment" отношения "course" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (1, 30, null, 2024-02-22 18:00:00, Math, 2024-02-15 10:00:00).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:341)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:326)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:302)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:297)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:601)
+	... 32 common frames omitted
