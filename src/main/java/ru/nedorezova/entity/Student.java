@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "students")
+@Table(name = "student")
 public class Student {
 
     @Id
@@ -35,9 +35,9 @@ public class Student {
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
-    List<Course> courseList = new ArrayList<>();
+    List<Course> courses = new ArrayList<>();
 
     public List<Course> getCourses() {
-        return courseList;
+        return courses;
     }
 }

@@ -1,4 +1,4 @@
-CREATE TABLE courses (
+CREATE TABLE course (
                          id SERIAL PRIMARY KEY,
                          name VARCHAR(255) NOT NULL,
                          capacity INT NOT NULL,
@@ -7,7 +7,7 @@ CREATE TABLE courses (
                          end_date TIMESTAMP WITH TIME ZONE NOT NULL
 );
 
-CREATE TABLE students (
+CREATE TABLE student (
                           id SERIAL PRIMARY KEY,
                           name VARCHAR(255) NOT NULL,
                           surname VARCHAR(255) NOT NULL
@@ -15,6 +15,6 @@ CREATE TABLE students (
 
 CREATE TABLE enrollment (
                             id SERIAL PRIMARY KEY,
-                            student_id INT REFERENCES students(id),
-                            course_id INT REFERENCES courses(id)
+                            student_id INT REFERENCES student(id),
+                            course_id INT REFERENCES course(id)
 );

@@ -1,4 +1,4 @@
-INSERT INTO students (name, surname) VALUES
+INSERT INTO student (name, surname) VALUES
                                          ('Ivan', 'Ivanov'),
                                          ('Anna', 'Petrova'),
                                          ('Oleg', 'Olegov');
