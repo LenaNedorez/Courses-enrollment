@@ -14,9 +14,6 @@ import ru.nedorezova.entity.Student;
 import ru.nedorezova.exception.CourseNotFoundException;
 import ru.nedorezova.exception.EnrollmentException;
 import ru.nedorezova.exception.StudentNotFoundException;
-import ru.nedorezova.mappers.CourseMapper;
-import ru.nedorezova.mappers.EnrollmentMapper;
-import ru.nedorezova.mappers.StudentMapper;
 import ru.nedorezova.repository.CourseRepository;
 import ru.nedorezova.repository.EnrollmentRepository;
 import ru.nedorezova.repository.StudentRepository;
@@ -27,8 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -36,16 +32,12 @@ public class StudentServiceTest {
 
     @Mock
     private StudentRepository studentRepository;
+
     @Mock
     private CourseRepository courseRepository;
+
     @Mock
     private EnrollmentRepository enrollmentRepository;
-    @Mock
-    private StudentMapper studentMapper;
-    @Mock
-    private CourseMapper courseMapper;
-    @Mock
-    private EnrollmentMapper enrollmentMapper;
 
     @InjectMocks
     private StudentService studentService;
@@ -53,8 +45,8 @@ public class StudentServiceTest {
     @Test
     public void testGetAllStudents() {
         List<Student> students = Arrays.asList(
-                new Student(1L, "Иван", "Иванов"),
-                new Student(2L, "Петр", "Петров")
+                new Student(1L, "Ivan", "Ivanov"),
+                new Student(2L, "Leonid", "Petrov")
         );
         when(studentRepository.findAll()).thenReturn(students);
 
@@ -62,22 +54,22 @@ public class StudentServiceTest {
 
         assertEquals(2, studentDtos.size());
         verify(studentRepository, times(1)).findAll();
-        verify(studentMapper, times(2)).toDto(any(Student.class));
     }
 
     @Test
     public void testGetStudent_Found() throws StudentNotFoundException {
         Long studentId = 1L;
-        Student student = new Student(studentId, "Иван", "Иванов");
-        StudentDto studentDto = new StudentDto();
+        Student student = new Student(studentId, "Oleg", "Sidorov");
+
         when(studentRepository.findById(studentId)).thenReturn(Optional.of(student));
-        when(studentMapper.toDto(student)).thenReturn(studentDto);
 
         StudentDto result = studentService.getStudent(studentId);
 
-        assertEquals(studentDto, result);
+        assertEquals(studentId, result.getId());
+        assertEquals("Oleg", result.getName());
+        assertEquals("Sidorov", result.getSurname());
+
         verify(studentRepository, times(1)).findById(studentId);
-        verify(studentMapper, times(1)).toDto(student);
     }
 
     @Test
@@ -88,7 +80,6 @@ public class StudentServiceTest {
         assertThrows(StudentNotFoundException.class, () -> studentService.getStudent(studentId));
 
         verify(studentRepository, times(1)).findById(studentId);
-        verify(studentMapper, never()).toDto(any(Student.class));
     }
 
     @Test
@@ -98,18 +89,15 @@ public class StudentServiceTest {
                 new Enrollment(1L, studentId, 1L),
                 new Enrollment(2L, studentId, 2L)
         );
-        List<EnrollmentDto> enrollmentDtos = Arrays.asList(new EnrollmentDto(), new EnrollmentDto());
         when(enrollmentRepository.findByStudentId(studentId)).thenReturn(enrollments);
-        when(enrollmentMapper.toDto(enrollments.get(0))).thenReturn(enrollmentDtos.get(0));
-        when(enrollmentMapper.toDto(enrollments.get(1))).thenReturn(enrollmentDtos.get(1));
 
         List<EnrollmentDto> result = studentService.getStudentEnrollment(studentId);
 
         assertEquals(2, result.size());
-        assertEquals(enrollmentDtos.get(0), result.get(0));
-        assertEquals(enrollmentDtos.get(1), result.get(1));
+        assertEquals(1L, result.get(0).getCourseId());
+        assertEquals(2L, result.get(1).getCourseId());
+
         verify(enrollmentRepository, times(1)).findByStudentId(studentId);
-        verify(enrollmentMapper, times(2)).toDto(any(Enrollment.class));
     }
 
     @Test
@@ -117,19 +105,18 @@ public class StudentServiceTest {
         Long courseId = 1L;
         Long studentId = 1L;
         String timezone = "Europe/Moscow";
-        Course course = new Course(courseId, "Математика", 30, 10, LocalDateTime.now(), LocalDateTime.now().plusMonths(1));
-        Student student = new Student(studentId, "Иван", "Иванов");
-        CourseDto courseDto = new CourseDto();
+        LocalDateTime now = LocalDateTime.now();
+        Course course = new Course(courseId, "Math", 30, 10, now.minusDays(1), now.plusDays(1));
+        Student student = new Student(studentId, "Ivan", "Ivanov");
+
         when(courseRepository.findById(courseId)).thenReturn(Optional.of(course));
         when(studentRepository.findById(studentId)).thenReturn(Optional.of(student));
-        when(courseMapper.toDto(course)).thenReturn(courseDto);
 
         CourseDto result = studentService.enrollStudent(courseId, studentId, timezone);
 
-        assertEquals(courseDto, result);
+        assertNotNull(result);
         verify(courseRepository, times(1)).findById(courseId);
         verify(studentRepository, times(1)).findById(studentId);
-        verify(courseMapper, times(1)).toDto(course);
         verify(enrollmentRepository, times(1)).save(any(Enrollment.class));
     }
 
@@ -138,14 +125,13 @@ public class StudentServiceTest {
         Long courseId = 1L;
         Long studentId = 1L;
         String timezone = "Europe/Moscow";
-        Course course = new Course(courseId, "Математика", 10, 10, LocalDateTime.now(), LocalDateTime.now().plusMonths(1));
+        Course course = new Course(courseId, "History", 10, 10, LocalDateTime.now(), LocalDateTime.now().plusMonths(1));
         when(courseRepository.findById(courseId)).thenReturn(Optional.of(course));
 
         assertThrows(EnrollmentException.class, () -> studentService.enrollStudent(courseId, studentId, timezone));
 
         verify(courseRepository, times(1)).findById(courseId);
         verify(studentRepository, never()).findById(studentId);
-        verify(courseMapper, never()).toDto(any(Course.class));
         verify(enrollmentRepository, never()).save(any(Enrollment.class));
     }
 
@@ -154,7 +140,7 @@ public class StudentServiceTest {
         Long courseId = 1L;
         Long studentId = 1L;
         String timezone = "Europe/Moscow";
-        Course course = new Course(courseId, "Математика", 30, 10, LocalDateTime.now(), LocalDateTime.now().plusMonths(1));
+        Course course = new Course(courseId, "Math", 30, 10, LocalDateTime.now(), LocalDateTime.now().plusMonths(1));
         when(courseRepository.findById(courseId)).thenReturn(Optional.of(course));
         when(studentRepository.findById(studentId)).thenReturn(Optional.empty());
 
@@ -162,7 +148,6 @@ public class StudentServiceTest {
 
         verify(courseRepository, times(1)).findById(courseId);
         verify(studentRepository, times(1)).findById(studentId);
-        verify(courseMapper, never()).toDto(any(Course.class));
         verify(enrollmentRepository, never()).save(any(Enrollment.class));
     }
 

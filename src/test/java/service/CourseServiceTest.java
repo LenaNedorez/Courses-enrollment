@@ -30,16 +30,15 @@ public class CourseServiceTest {
     private CourseRepository courseRepository;
     @Mock
     private StudentRepository studentRepository;
-    @Mock
-    private CourseMapper courseMapper;
+
     @InjectMocks
     private CourseService courseService;
 
     @Test
     public void testGetCourses() {
         List<Course> courses = Arrays.asList(
-                new Course(1L, "Математика", 30, 10, LocalDateTime.now(), LocalDateTime.now().plusMonths(1)),
-                new Course(2L, "Физика", 20, 5, LocalDateTime.now(), LocalDateTime.now().plusMonths(1))
+                new Course(1L, "Math", 30, 10, LocalDateTime.now(), LocalDateTime.now().plusMonths(1)),
+                new Course(2L, "History", 20, 5, LocalDateTime.now(), LocalDateTime.now().plusMonths(1))
         );
         when(courseRepository.findAll()).thenReturn(courses);
 
@@ -52,16 +51,15 @@ public class CourseServiceTest {
     @Test
     public void testGetCourse_Found() throws CourseNotFoundException {
         Long courseId = 1L;
-        Course course = new Course(courseId, "Математика", 30, 10, LocalDateTime.now(), LocalDateTime.now().plusMonths(1));
-        CourseDto courseDto = new CourseDto();
+        Course course = new Course(courseId, "Math", 30, 10, LocalDateTime.now(), LocalDateTime.now().plusMonths(1));
+
+        CourseDto courseDto = CourseMapper.INSTANCE.toDto(course);
         when(courseRepository.findById(courseId)).thenReturn(Optional.of(course));
-        when(courseMapper.toDto(course)).thenReturn(courseDto);
 
         CourseDto result = courseService.getCourse(courseId);
 
-        assertEquals(courseDto, result);
+        assertEquals(courseDto.getId(), result.getId());
         verify(courseRepository, times(1)).findById(courseId);
-        verify(courseMapper, times(1)).toDto(course);
     }
 
     @Test
@@ -72,31 +70,25 @@ public class CourseServiceTest {
         assertThrows(CourseNotFoundException.class, () -> courseService.getCourse(courseId));
 
         verify(courseRepository, times(1)).findById(courseId);
-        verify(courseMapper, never()).toDto(any(Course.class));
     }
 
     @Test
     public void testGetCoursesByStudent() throws StudentNotFoundException {
         Long studentId = 1L;
-        Student student = new Student(studentId, "Иван", "Иванов");
-        Course course1 = new Course(1L, "Математика", 30, 10, LocalDateTime.now(), LocalDateTime.now().plusMonths(1));
-        Course course2 = new Course(2L, "Физика", 20, 5, LocalDateTime.now(), LocalDateTime.now().plusMonths(1));
+        Student student = new Student(studentId, "Ivan", "Ivanov");
+        Course course1 = new Course(1L, "Math", 30, 10, LocalDateTime.now(), LocalDateTime.now().plusMonths(1));
+        Course course2 = new Course(2L, "Russian language", 20, 5, LocalDateTime.now(), LocalDateTime.now().plusMonths(1));
         student.getCourses().addAll(Arrays.asList(course1, course2));
-        CourseDto courseDto1 = new CourseDto();
-        CourseDto courseDto2 = new CourseDto();
-        when(courseMapper.toDto(course1)).thenReturn(courseDto1);
-        when(courseMapper.toDto(course2)).thenReturn(courseDto2);
 
         when(studentRepository.findById(studentId)).thenReturn(Optional.of(student));
 
         List<CourseDto> result = courseService.getCoursesByStudent(studentId);
 
         assertEquals(2, result.size());
-        assertTrue(result.contains(courseDto1));
-        assertTrue(result.contains(courseDto2));
+        assertTrue(result.stream().anyMatch(c -> CourseMapper.INSTANCE.toDto(course1).getId().equals(c.getId())));
+        assertTrue(result.stream().anyMatch(c -> CourseMapper.INSTANCE.toDto(course2).getId().equals(c.getId())));
+
         verify(studentRepository, times(1)).findById(studentId);
-        verify(courseMapper, times(1)).toDto(course1);
-        verify(courseMapper, times(1)).toDto(course2);
     }
 
     @Test
@@ -107,6 +99,5 @@ public class CourseServiceTest {
         assertThrows(StudentNotFoundException.class, () -> courseService.getCoursesByStudent(studentId));
 
         verify(studentRepository, times(1)).findById(studentId);
-        verify(courseMapper, never()).toDto(any(Course.class));
     }
 }
